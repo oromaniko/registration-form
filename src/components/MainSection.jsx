@@ -1,8 +1,8 @@
 import {useState} from "react";
 import StepperHeader from "./StepperHeader";
-import StepperBody from "./stepper-body/StepperBody";
+import RegistrationForm from "./registration-form/RegistrationForm";
 
-export default function RegistrationForm() {
+export default function MainSection() {
     const [stepIndex, setStepIndex] = useState(0);
 
     return (
@@ -11,7 +11,7 @@ export default function RegistrationForm() {
                 <div className='registration'>
                     <div className='stepper'>
                         <StepperHeader index={stepIndex}/>
-                        <StepperBody index={stepIndex} setIndex={setStepIndex} />
+                        <RegistrationForm index={stepIndex} setIndex={setStepIndex} />
                     </div>
                 </div>
             </div>
