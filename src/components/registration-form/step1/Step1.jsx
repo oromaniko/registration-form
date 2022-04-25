@@ -12,17 +12,7 @@ const yupSchema = object({
     confirmPassword: string().oneOf([ref('password'), null], 'Пароли должны совпадать'),
 });
 
-export default function Step1({setIndex}) {
-    const [inputValues, setInputVale] = useState({
-        lastName: '',
-        firstName: '',
-        email: '',
-        job: '',
-        phone: '',
-        password: '',
-        confirmPassword: '',
-    })
-
+export default function Step1({setIndex, inputValues, setInputValue}) {
     const [validationError, setValidationError] = useState('')
 
     const handleSubmit = (e) => {
@@ -47,7 +37,7 @@ export default function Step1({setIndex}) {
                     name={name}
                     label={formSchema[name].label}
                     value={inputValues[name]}
-                    setValue={setInputVale}
+                    setValue={setInputValue}
                 />)
             })}
             {validationError && <div style={{color: 'red'}}>{validationError}</div>}

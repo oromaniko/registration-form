@@ -1,5 +1,6 @@
 import TextInput from "../inputs/TextInput";
 import PasswordInput from "../inputs/PasswordInput";
+import PhoneInput from "../inputs/PhoneInput";
 
 const formSchema = {
     lastName: {
@@ -20,7 +21,7 @@ const formSchema = {
     },
     phone: {
         label: 'Телефон',
-        component: TextInput,
+        component: PhoneInput,
     },
     password: {
         label: 'Пароль',
