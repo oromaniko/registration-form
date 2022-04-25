@@ -1,5 +1,6 @@
 import {number, object} from "yup";
 import Country from "./Country";
+import InputMask from "react-input-mask";
 
 const yupSchema = object({
     INN: number().required('ИНН должен состоять из 10 цифр'),
@@ -73,7 +74,14 @@ export default function Step2({setIndex, inputValues, setInputValue}) {
                 <label className="input__container field__container" label="ИНН">
                     <span className="field__label">ИНН</span>
                     <div className="relative">
-                        <input placeholder="" type="tel" className="field"/>
+                        <InputMask
+                            mask='9 9 9 9 9 9 9 9 9 9'
+                            value={inputValues.INN}
+                            onChange={(e) => setInputValue((prev) => ({...prev, INN: e.target.value}))}
+                            placeholder=""
+                            type="tel"
+                            className="field"
+                        />
                         <div className="multiselect__spinner field__spinner" style={{display: "none"}}></div>
                     </div>
                 </label>

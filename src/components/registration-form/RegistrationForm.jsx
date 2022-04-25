@@ -18,6 +18,7 @@ export default function RegistrationForm({index, setIndex}) {
 
     const [step2InputValues, setStep2InputValue] = useState({
         country: 'Россия',
+        INN: '',
     })
 
     const inputValues = {
